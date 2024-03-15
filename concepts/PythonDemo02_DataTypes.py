@@ -134,6 +134,11 @@ _dictionary_data_type_demo()
 def _set_data_type_demo() -> None:
     set1 = {1, 1, "Rohit"}
     print("set1 ", set1)
+    set1.add("Pooja")
+    print("set1 after adding element 'Pooja' ", set1)
+
+    set1.add("Pooja")
+    print("set1 after adding same element 'Pooja' ", set1)
 
     print("**" * 25)
 
