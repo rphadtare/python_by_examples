@@ -51,6 +51,7 @@ a = 50
 b = a
 print("ID of a ", id(a))
 print("ID of b ", id(b))
-a = 100
-print("ID of a after assigning new value ", id(a))
-
+b = 100
+print("after assigning new value ")
+print("ID of a ", id(a))
+print("ID of b ", id(b))
