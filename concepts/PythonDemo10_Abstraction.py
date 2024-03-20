@@ -8,7 +8,7 @@ class Shape(ABC):
         pass
 
     def show(self, shape_name=''):
-        print("This is {} shape".format(shape_name))
+        print(f"This is {shape_name} shape")
 
 
 class TriangleShape(Shape):
