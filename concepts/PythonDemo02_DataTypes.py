@@ -144,3 +144,15 @@ def _set_data_type_demo() -> None:
 
 
 _set_data_type_demo()
+
+
+def _list_comprehension_demo():
+    int_list = [10, 20, 30, 40, 11, 13, 23, 24]
+    odd_number_squares_list = [n * n for n in int_list if n % 2 != 0]
+    print("Input list:", int_list)
+    print("Output list:", odd_number_squares_list)
+
+
+_list_comprehension_demo()
+
+

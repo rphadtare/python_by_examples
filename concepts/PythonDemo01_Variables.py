@@ -53,5 +53,6 @@ print("ID of a ", id(a))
 print("ID of b ", id(b))
 b = 100
 print("after assigning new value ")
+print(f"Value of a: {a} and b: {b}")
 print("ID of a ", id(a))
 print("ID of b ", id(b))
