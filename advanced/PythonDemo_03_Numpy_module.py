@@ -4,7 +4,7 @@ import random
 
 
 def initialisation_demo():
-    # To create empty array
+    """To create empty array using built in methods"""
     arr = np.zeros(5, 'i')
     print("Empty arr: ", arr, " dtype:", arr.dtype, " dimension: ", arr.ndim)
 
@@ -31,6 +31,7 @@ def initialisation_demo():
 
 
 def one_dimensional_array():
+    """Demo functionality for index and slicing operations on one-d array"""
     num_list = random.sample(range(0, 100), 7)
     arr = np.array(num_list, 'i')
     print("Accessing elements using indexing of one dimensional array")
@@ -57,7 +58,7 @@ def one_dimensional_array():
 
 
 def two_dimensional_arr():
-    # empty array with zero values
+    """Demo functionality for index and slicing operations on 2-d array"""
     arr = np.zeros((2, 2), dtype='i')
     print("2-D array with zero values ", arr)
 
@@ -98,6 +99,7 @@ def two_dimensional_arr():
 
 
 def copy_and_view_demo():
+    """Demo functionality of copy and view methods from numpy module"""
     arr = np.array([1, 2, 3, 4], dtype=int)
     print("Original arr : ", arr, " base: ", arr.base)
     arr1 = arr.copy()
@@ -119,6 +121,7 @@ def copy_and_view_demo():
 
 
 def shapeDemo():
+    """Demo functionality to understand shape of numpy module"""
     arr = np.full((3, 2), 1, dtype='i')
     for i in arr:
         for j in i:
@@ -127,13 +130,16 @@ def shapeDemo():
 
 
 def reShapeDemo():
+    """Demo functionality to understand reshape and resize of numpy module"""
 
     num_list = random.sample(range(1, 100), 7)
     arr = np.array(num_list, dtype='i')
     print(f"Input array before resize: {arr} with shape: {arr.shape} and base: {arr.base}")
+    reshaped_arr = None
 
     try:
         reshaped_arr = np.reshape(arr, newshape=(2, 4))
+        print(f"Reshaped array with new shape: {reshaped_arr.shape} and base: {reshaped_arr.base}")
 
     except ValueError as v:
         print("Error received : ", v)
@@ -153,6 +159,7 @@ def reShapeDemo():
         print("-"*50)
 
 def reShapeDemo2():
+    """Demo functionality to understand flatten and ravel of numpy module"""
     arr = np.array([[1, 2, 3], [4, 5, 6]], dtype='i')
     print(f"Input array before reshape: {arr} with shape: {arr.shape} and base: {arr.base}")
     arr1 = arr.flatten()
@@ -162,11 +169,14 @@ def reShapeDemo2():
 
 
 def itrDemo():
+    """Demo functionality to understand nditer() method"""
     arr = np.array([[1, 2, 3], [4, 5, 6]], dtype='i')
     for x in np.nditer(arr[::, :2], flags=['buffered'], op_dtypes='S'):
         print(x)
 
 def joinDemo():
+    """Demo functionality to understand joining of array from numpy module"""
+
     arr1 = np.array([1, 2, 3, 4, 5], dtype='i')
     arr2 = np.array([7, 8, 9, 10, 11], dtype='i')
 
@@ -181,6 +191,7 @@ def joinDemo():
 
     # using vstack
     print(np.vstack((arr1, arr2)))
+
 
 def main():
     print("Version of numpy", np.__version__)
