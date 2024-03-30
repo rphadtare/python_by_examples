@@ -33,6 +33,7 @@ def seriesDemo():
 
 
 def dataFrameDemo():
+    """This functions provides demo on pandas dataframe basics"""
     d1 = {
         "id": [1, 2, 3],
         "name": ["Rohit", "Pooja", "Rajani"]
@@ -67,7 +68,7 @@ def dataFrameDemo():
 
 
 def dataframe_filter_demo():
-    """Dataframe operation"""
+    """This functions gives demo about pandas Dataframe to select rows on basis of condition"""
 
     d3 = [random.randint(i, i * 10) for i in range(0, 500)]
     d4 = ['A', 'B', 'C', 'D', 'E'] * 100
@@ -94,6 +95,7 @@ def dataframe_filter_demo():
 
 
 def dataframe_duplicate_demo():
+    """This functions gives demo to find duplicates in pandas dataframe and remove them"""
     d = {
         'id': [1, 2, 3, 4, 5, 1],
         'name': ['R', 'O', 'H', 'I', 'T', 'R']
@@ -119,6 +121,7 @@ def dataframe_duplicate_demo():
 
 
 def null_handling_demo():
+    """This functions gives demo to handle null values in pandas dataframe"""
     d = {
         'id': [1, 2, 3, 4, 5, None, 8],
         'name': ['R', 'O', 'H', 'I', 'T', 'C', None]
@@ -140,6 +143,7 @@ def null_handling_demo():
 
 
 def dataframe_add_rows():
+    """This functions gives demo to join two same pandas dataframes i.e. row-wise"""
     d = {
         'id': [1, 2, 3, 4, 5],
         'name': ['R', 'O', 'H', 'I', 'T']
@@ -160,6 +164,7 @@ def dataframe_add_rows():
 
 
 def dataframe_where_demo():
+    """This functions gives demo to use where function with pandas dataframe"""
     d = {
         'id': [1, 2, 3, 4, 5],
         'name': ['R', 'O', 'H', 'I', 'T']
@@ -195,6 +200,7 @@ def dataframe_remove_rows():
 
 
 def dataframe_join_demo():
+    """This functions gives demo to use 'join' function with pandas dataframes"""
     emp_data = {
         'emp_id': [10, 20, 30, 40, 50, 60],
         'emp_name': ["Rohit", "Pooja", "Rajani", "Rushi", "Rutu", "Prithvi"],
@@ -221,6 +227,7 @@ def dataframe_join_demo():
 
 
 def dataframe_merge_demo():
+    """This functions gives demo to use 'merge' function with pandas dataframes"""
     emp_data = {
         'emp_id': [10, 20, 30, 40, 50, 60],
         'emp_name': ["Rohit", "Pooja", "Rajani", "Rushi", "Rutu", "Prithvi"],
@@ -244,6 +251,7 @@ def dataframe_merge_demo():
 
 
 def datframe_export_file():
+    """This functions gives demo to export pandas dataframes to files like csv, json"""
     emp_data = {
         'emp_id': [10, 20, 30, 40, 50, 60],
         'emp_name': ["Rohit", "Pooja", "Rajani", "Rushi", "Rutu", "Prithvi"],
@@ -273,6 +281,7 @@ def datframe_export_file():
 
 
 def dataframe_read_json_export_to_parquet():
+    """This functions gives demo to read files like csv, json and stored result in parquet format"""
     json_file_path = os.getcwd() + "/data/employee_details/employee.json"
     parquet_file_path = os.getcwd() + "/data/employee_details/parquet/"
     df = pd.read_json(json_file_path)
