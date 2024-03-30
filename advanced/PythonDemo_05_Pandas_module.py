@@ -2,7 +2,7 @@
 import random
 
 import pandas as pd
-
+import os
 
 def seriesDemo():
     """This function gives demo for Pandas Series"""
@@ -243,4 +243,50 @@ def dataframe_merge_demo():
     print(emp_df.merge(dept_df.rename(columns={'id': 'dept_id'}), how='left'))
 
 
-dataframe_remove_rows()
+def datframe_export_file():
+    emp_data = {
+        'emp_id': [10, 20, 30, 40, 50, 60],
+        'emp_name': ["Rohit", "Pooja", "Rajani", "Rushi", "Rutu", "Prithvi"],
+        'emp_sal': [5600, 6200, 7900, 7623.45, 5823.41, 5399.14],
+        'dept_id': [1, 2, 3, 1, 3, 3]
+    }
+
+    dept_data = {
+        'dept_id': [1, 2, 3],
+        'dept_name': ["IT", "Civil", "Computer Science"]
+    }
+
+    emp_df = pd.DataFrame(emp_data)
+    dept_df = pd.DataFrame(dept_data)
+
+    merged_df = emp_df.merge(dept_df, how='inner')
+    path_to_save = os.getcwd() + "/data/employee_details/"
+
+    is_dir_exist = os.access(path_to_save, os.F_OK)
+    if not is_dir_exist:
+        print("creating directory to store file")
+        os.makedirs(path_to_save)
+
+    merged_df.to_csv(path_to_save+"employee.csv", header=True)
+    merged_df.to_json(path_to_save+"employee.json")
+    print("Dataframe saved into csv and json format")
+
+
+def dataframe_read_json_export_to_parquet():
+    json_file_path = os.getcwd() + "/data/employee_details/employee.json"
+    parquet_file_path = os.getcwd() + "/data/employee_details/parquet/"
+    df = pd.read_json(json_file_path)
+
+    print("Employee dataframe ...")
+    print(df)
+    print("Saving dataframe to json format")
+    is_dir_exist = os.access(parquet_file_path, os.F_OK)
+    if not is_dir_exist:
+        print(f"creating {parquet_file_path} to store parquet file")
+        os.makedirs(parquet_file_path)
+
+    df.to_parquet(parquet_file_path+"employee.parquet", compression="snappy", engine='fastparquet')
+    print("File stored as parquet format")
+
+
+dataframe_read_json_export_to_parquet()
