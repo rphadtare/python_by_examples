@@ -1,0 +1,7 @@
+,emp_id,emp_name,emp_sal,dept_id,dept_name
+0,10,Rohit,5600.0,1,IT
+1,20,Pooja,6200.0,2,Civil
+2,30,Rajani,7900.0,3,Computer Science
+3,40,Rushi,7623.45,1,IT
+4,50,Rutu,5823.41,3,Computer Science
+5,60,Prithvi,5399.14,3,Computer Science
