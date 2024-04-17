@@ -174,6 +174,7 @@ def itrDemo():
     for x in np.nditer(arr[::, :2], flags=['buffered'], op_dtypes='S'):
         print(x)
 
+
 def joinDemo():
     """Demo functionality to understand joining of array from numpy module"""
 
@@ -193,9 +194,49 @@ def joinDemo():
     print(np.vstack((arr1, arr2)))
 
 
+def searchDemo():
+    """Demo for searchSorted method of numpy"""
+    arr = np.array([6, 7, 8, 9], "i")
+    print(np.searchsorted(arr, 7))
+
+
+def filteringBasedOnBooleanValues():
+    """Demo for filtering array by using boolean values"""
+    arr = np.array([1, 10, 3, 14])
+    list = []
+    for i in arr:
+        if(i % 2 == 0):
+            list.append(True)
+        else:
+            list.append(False)
+
+    new_arr = arr[list]
+    print(f"Input array: {arr}")
+    print(f"Boolean values: {list}")
+    print(f"Array result filtered on boolean values: {new_arr}")
+
+
+def simpleWayFilter():
+    """Demo for filtering array by using simple way"""
+    arr = np.array([1, 10, 3, 14])
+    filter_cond = arr % 2 == 0
+    new_arr = arr[filter_cond]
+
+    print(f"Input array: {arr}")
+    print(f"Array result filtered in simple way: {new_arr}")
+
+
+def otherDemo():
+    arr = np.array([1, 10, 3, 14])
+    print(f"Input array: {arr}")
+    print(f"Max element: {arr.max()}")
+    print(f"Min element: {arr.min()}")
+    print(f"Sum: {arr.sum()}")
+
+
 def main():
     print("Version of numpy", np.__version__)
-    reShapeDemo()
+    otherDemo()
 
 
 if __name__ == "__main__":
