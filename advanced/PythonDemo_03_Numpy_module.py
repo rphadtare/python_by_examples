@@ -205,7 +205,7 @@ def filteringBasedOnBooleanValues():
     arr = np.array([1, 10, 3, 14])
     list = []
     for i in arr:
-        if(i % 2 == 0):
+        if i % 2 == 0:
             list.append(True)
         else:
             list.append(False)
