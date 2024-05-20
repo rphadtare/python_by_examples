@@ -232,6 +232,7 @@ def otherDemo():
     print(f"Max element: {arr.max()}")
     print(f"Min element: {arr.min()}")
     print(f"Sum: {arr.sum()}")
+    print(np.lcm.reduce([3, 6, 9]))
 
 
 def main():
