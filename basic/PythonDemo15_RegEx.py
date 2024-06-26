@@ -5,7 +5,7 @@ import re
 
 def simpleSearch():
     # create re object using compile method
-    pattern = "Hello"
+    pattern = "demo"
     input_str = "Hello, This is Hello demo!!"
 
     print(f"Input: {input_str}")
@@ -88,11 +88,27 @@ def escapeDemo():
     print(f"Input: {input_str}")
     print(f"patten: {pattern}")
     print(f"escape patten: {pattern_with_escape}")
-    print("Result: ", re.search(pattern, input_str))
+    print("Result: ", re.search(pattern_with_escape, input_str))
+
+
+def auto_complete():
+    words = ["Pinterest", "Pandora", "pile", "Pg&e"]
+    input = "P"
+    print(f"input - {input}")
+
+    result_list = []
+    for i in words:
+        result = bool(re.search(input.lower(), i.lower()))
+        print("Input", i, result)
+        if result:
+            result_list.append(i)
+
+    result_list.sort(reverse=False)
+    return result_list[:3]
 
 
 def main():
-    option = 4
+    option = 9
     if option == 1:
         simpleSearch()
     elif option == 2:
@@ -111,6 +127,9 @@ def main():
         subN_Demo()
     elif option == 9:
         escapeDemo()
+    elif option == 10:
+        result = auto_complete()
+        print(", and ".join([",".join(result[:-1]), result[-1]]))
 
 
 if __name__ == "__main__":
