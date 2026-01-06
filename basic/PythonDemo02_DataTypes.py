@@ -140,6 +140,11 @@ def _set_data_type_demo() -> None:
     set1.add("Pooja")
     print("set1 after adding same element 'Pooja' ", set1)
 
+    set1 = {1, 2, 3, 4, 5, 6}
+    set2 = {3, 4}
+    set3 = {5, 6}
+    print(set1-set2-set3)
+
     print("**" * 25)
 
 
